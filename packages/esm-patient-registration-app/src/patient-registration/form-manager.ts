@@ -242,7 +242,9 @@ export class FormManager {
         } = patientIdentifier;
 
         const autoGenerationManualEntry =
-          autoGeneration && selectedSource?.autoGenerationOption?.manualEntryEnabled && !!identifierValue;
+          autoGeneration &&
+          selectedSource?.autoGenerationOption?.manualEntryEnabled &&
+          identifierValue !== 'auto-generated';
 
         const identifier =
           !autoGeneration || autoGenerationManualEntry

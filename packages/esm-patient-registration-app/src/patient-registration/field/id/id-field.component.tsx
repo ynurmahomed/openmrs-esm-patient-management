@@ -25,16 +25,14 @@ export function setIdentifierSource(
   selectedSource: IdentifierSource;
 } {
   const autoGeneration = identifierSource?.autoGenerationOption?.automaticGenerationEnabled;
-  const manualEntryEnabled = identifierSource?.autoGenerationOption?.manualEntryEnabled;
   return {
     selectedSource: identifierSource,
     autoGeneration,
-    identifierValue:
-      autoGeneration && !manualEntryEnabled
-        ? 'auto-generated'
-        : identifierValue !== 'auto-generated'
-          ? identifierValue
-          : initialValue,
+    identifierValue: autoGeneration
+      ? 'auto-generated'
+      : identifierValue !== 'auto-generated'
+        ? identifierValue
+        : initialValue,
   };
 }
 

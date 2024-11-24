@@ -129,13 +129,5 @@ describe('setIdentifierSource', () => {
       const { identifierValue } = setIdentifierSource(identifierSource, '', '');
       expect(identifierValue).toBe('auto-generated');
     });
-
-    it('should return the identifier value when manual entry enabled', () => {
-      const identifierSource = {
-        autoGenerationOption: { automaticGenerationEnabled: true, manualEntryEnabled: true },
-      } as IdentifierSource;
-      const { identifierValue } = setIdentifierSource(identifierSource, '10001V', '');
-      expect(identifierValue).toBe('10001V');
-    });
   });
 });
